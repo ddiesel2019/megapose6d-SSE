@@ -27,12 +27,12 @@ dependencies:
   - pillow
   - ipywidgets
   - ipywidgets==7.7.2
-  - selenium
+  - selenium==4.5.0
   - geckodriver
   - firefox
   - pip:
       - meshcat
-      - selenium
+      - selenium==4.5.0
       - omegaconf
       - simplejson
       - line_profiler 
