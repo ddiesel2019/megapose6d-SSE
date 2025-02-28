@@ -14,6 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
+#TODO: define SSE dataset directory (SSE_DATA_DIR)
+#TODO: edit make_scene_dataset and _make_object_dataset to handle SSE dataset
+
 
 
 # Standard Library
@@ -180,6 +183,15 @@ def make_scene_dataset(
             n_images_per_object=50,
         )
 
+################
+    # SSE Datasets
+    elif ds_name == "SSEdataset":
+        ds_dir = SSE_DATA_DIR / ds_name
+        ds = SSEdObjectDataset(
+            ds_dir,
+            split="train"
+        )
+###################
     # Datasets in webdataset format
     elif ds_name.startswith("webdataset."):
         ds_name = ds_name[len("webdataset.") :]
