@@ -19,10 +19,14 @@ dependencies:
   - notebook
   - nb_conda_kernels
   - jupyter_contrib_nbextensions
+  - jupyter==1.0.0
+  - notebook==6.4.12
+  - jupyter_contrib_nbextensions==0.5.1
   - pinocchio
   - rclone
   - pillow
   - ipywidgets
+  - ipywidgets==7.7.2
   - selenium
   - geckodriver
   - firefox
