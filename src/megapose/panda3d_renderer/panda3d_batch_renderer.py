@@ -221,9 +221,9 @@ class Panda3dBatchRenderer:
         K: torch.Tensor,
         light_datas: List[List[Panda3dLightData]],
         resolution: Resolution,
-        render_depth: bool = False,
+        render_depth: bool = True,
         render_mask: bool = False,
-        render_normals: bool = False,
+        render_normals: bool = True,
     ) -> BatchRenderOutput:
 
         if render_mask:
