@@ -1,4 +1,4 @@
-name: megapose
+name: megapose-SSE
 channels:
    - conda-forge
    - pytorch
