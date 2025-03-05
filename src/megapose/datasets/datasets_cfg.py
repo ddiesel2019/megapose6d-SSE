@@ -37,6 +37,7 @@ from megapose.config import (
     SHAPENET_MODELNET_CATEGORIES,
     WDS_DS_DIR,
     YCBV_OBJECT_NAMES,
+    SSE_DS_DIR
 )
 from megapose.datasets.bop_object_datasets import BOPObjectDataset
 from megapose.datasets.bop_scene_dataset import BOPDataset, remap_bop_targets
@@ -48,6 +49,7 @@ from megapose.datasets.scene_dataset import SceneDataset
 from megapose.datasets.shapenet_object_dataset import ShapeNetObjectDataset
 from megapose.datasets.urdf_dataset import UrdfDataset
 from megapose.datasets.web_scene_dataset import WebSceneDataset
+from megapose.datasets.SSE_dataset import SSEObjectDataset
 from megapose.utils.logging import get_logger
 
 logger = get_logger(__name__)
@@ -185,13 +187,14 @@ def make_scene_dataset(
 
 ################
     # SSE Datasets
-    elif ds_name == "SSEdataset":
-        ds_dir = SSE_DATA_DIR / ds_name
-        ds = SSEdObjectDataset(
-            ds_dir,
-            split="train"
-        )
+   # elif ds_name == "sse_dataset":
+   #     ds_dir = SSE_DS_DIR
+   #     ds = SSE_dataset(
+   #         ds_dir,
+   #         split="train"
+   #     )
 ###################
+
     # Datasets in webdataset format
     elif ds_name.startswith("webdataset."):
         ds_name = ds_name[len("webdataset.") :]
@@ -318,6 +321,10 @@ def make_object_dataset(ds_name: str) -> RigidObjectDataset:
                 )
             ds = ds.filter_objects(keep_labels)
 
+    #SSE
+    elif ds_name == "sse_dataset":
+        ds = SSEObjectDataset(SSE_DS_DIR, split=default)
+    
     # GSO
     # gso.{nobjects=500,...}.split
     elif ds_name.startswith("gso."):
