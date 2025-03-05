@@ -1,10 +1,10 @@
-# 2025-02-27
-Fork created, no changes made.
+# 2025-02-28
+- Adjusted files as needed according to ddiesel2019/megapose-slosh
+- Begun identifying training datasets in original megapose repo (note format, structure, paths, etc.)
+- Begun creating SSE dataset (trained YOLOv8 for object + bbox detections. With enough, will include dataset into Megapose)
 
 # To be done
-- Adjust files as needed according to ddiesel2019/megapose-slosh
-- Identify training datasets in original megapose repo (note format, structure, paths, etc.)
-- Create SSE dataset
+
 - Edit train_megapose.py to utilize SSE dataset
 - Edit PoseDataset to match annotations and transformations
 - Ensure rendered_obj_dataset points to SSE object, ensure Panda3dBatchRenderer handles .mtl files

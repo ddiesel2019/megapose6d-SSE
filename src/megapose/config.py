@@ -33,6 +33,7 @@ BOP_DS_DIR = LOCAL_DATA_DIR / "bop_datasets"
 NB_DATA_DIR = LOCAL_DATA_DIR / "notebook_data"
 SHAPENET_DIR = LOCAL_DATA_DIR / "shapenetcorev2"
 WDS_DS_DIR = LOCAL_DATA_DIR / "webdatasets"
+SSE_DS_DIR = LOCAL_DATA_DIR / "SSEdataset"
 
 BOP_TOOLKIT_DIR = PROJECT_ROOT / "deps" / "bop_toolkit_challenge"
 BLENDER_PBR_DS_DIR = LOCAL_DATA_DIR / "blender_pbr_datasets"
