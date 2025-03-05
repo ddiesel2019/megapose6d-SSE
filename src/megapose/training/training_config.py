@@ -67,7 +67,7 @@ class TrainingConfig(omegaconf.dictconfig.DictConfig):
     # Data augmentation
     rgb_augmentation: bool = True
     background_augmentation: bool = True
-    depth_augmentation: bool = False
+    depth_augmentation: bool = True
     depth_augmentation_level: int = 2
     min_area: Optional[float] = None
 
@@ -75,7 +75,7 @@ class TrainingConfig(omegaconf.dictconfig.DictConfig):
     run_id: Optional[str] = None
     resume_run_id: Optional[str] = None
     run_id_pretrain: Optional[str] = None
-    save_dir: Optional[str] = None
+    save_dir: Optional[str] = "$HOME/Documents/Megapose6d-SSE/TrainingRun"
     run_comment: str = ""
     run_postfix: str = str(np.random.randint(int(1e6)))
     batch_size: int = 16
@@ -100,7 +100,7 @@ class TrainingConfig(omegaconf.dictconfig.DictConfig):
     render_normals: bool = True
     input_depth: bool = False
     depth_normalization_type: str = "tCR_scale_clamp_center"
-    render_depth: bool = False
+    render_depth: bool = True
 
     # Training
     # Hypotheses
@@ -129,7 +129,7 @@ class TrainingConfig(omegaconf.dictconfig.DictConfig):
     loss_alpha_renderings_confidence: float = 0.0
 
     # Visualization
-    do_visualization: bool = False
+    do_visualization: bool = True
     vis_epoch_interval: int = 100
     vis_batch_size: int = 64
     vis_save_only_last: bool = False
